@@ -1,0 +1,29 @@
+.bim-tabs{
+  ::v-deep .el-tabs__header{
+    .el-tabs__nav-wrap::after{
+      display: none;
+    }
+    .el-tabs__item{
+      background: #ffe3e2;
+      padding: 0 10px;
+      margin: 0 10px;
+      color: #343435;
+      font-weight: bold;
+      border-radius: 6px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      transition: all 0.3s;
+      &:nth-child(2){
+        margin-left: 0;
+      }
+      &.is-active{
+        background: #ff524d;
+        color: #fff;
+      }
+    }
+    .el-tabs__active-bar{
+      display: none;
+    }
+  }
+}

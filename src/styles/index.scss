@@ -1,0 +1,326 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './cui.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  a{
+    color:#1890ff;
+  }
+}
+
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+// @include scrollBar;
+*{
+  @include scrollBar;
+}
+
+#communityApp {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  letter-spacing: 0.05rem;
+}
+.el-form-item__label{
+  letter-spacing: 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.app-main {
+  height: calc(100vh - 118px);
+  overflow-y: auto;
+  background-color: #F0F2F5;
+}
+
+.app-main > .container {
+  margin: 0 15px;
+  padding: 15px;
+  background-color: #fff;
+  min-height: calc(100vh - 133px);
+}
+
+.app-main > .container-margin {
+  margin: 0 15px;
+  min-height: calc(100vh - 133px);
+}
+
+.tooltips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  .el-button {
+    transition: all 0.4s;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    > .el-input {
+      margin-bottom: 17px;
+    }
+
+    .el-input + .el-button {
+      margin-left: 30px;
+    }
+
+    > span {
+      font-size: 14px;
+    }
+  }
+
+  .el-row + .el-row {
+    margin-top: 15px;
+  }
+
+  .el-form-item--mini.el-form-item,
+  .el-form-item--small.el-form-item,
+  .el-button {
+    margin-bottom: 17px;
+  }
+
+  .el-form-item .el-button {
+    margin-bottom: 0;
+  }
+
+  .el-form--inline .el-form-item:last-child {
+    margin-right: 0;
+  }
+}
+
+.el-dialog__wrapper.beauty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .el-dialog {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+
+    .el-dialog__header, .el-dialog__footer {
+      flex-shrink: 0;
+    }
+
+    .el-dialog__body {
+      flex-grow: 1;
+      max-height: calc(90vh - 116px);
+      @include scroll(5px);
+      overflow: auto;
+    }
+  }
+}
+
+.scroll-beauty {
+  @include scroll(6px);
+}
+
+// 按钮在vxe-table表格里的时候，去掉padding，使表格更紧凑
+.vxe-cell{
+  .button-link + .el-button,
+  .button-link + .button-link,
+  .el-button + .button-link,
+  .el-button + .el-button
+  {
+    margin-left: 8px;
+  }
+}
+
+body {
+  .vue-treeselect__label {
+    color: #666;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .vue-treeselect__placeholder,
+  .vue-treeselect__single-value {
+    line-height: 30px;
+  }
+}
+
+//调整vue-treeselect的样式和elementui 风格一致
+body {
+  .vue-treeselect {
+    line-height: 18px;
+    display: block;
+    box-sizing: unset;
+
+    * {
+      box-sizing: unset;
+    }
+    vertical-align: middle;
+    .vue-treeselect--focused .vue-treeselect__control {
+      border-color: #409eff;
+    }
+
+    .vue-treeselect--open-below .vue-treeselect__menu {
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+
+    .vue-treeselect__control {
+      height: 32px;
+      border-color: #dcdfe6;
+      border-radius: 4px !important;
+    }
+
+    .vue-treeselect__multi-value {
+      margin-bottom: 0;
+    }
+
+    .vue-treeselect__multi-value-item-container {
+      padding-top: 3px;
+    }
+
+    .vue-treeselect__placeholder {
+      line-height: 30px;
+    }
+  }
+}
+
+.list-complete-item {
+  transition: all .5s;
+}
+
+.list-complete-enter, .list-complete-leave-to
+  /* .list-complete-leave-active for below version 2.1.8 */
+{
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-complete-leave-active {
+  position: absolute;
+}
+
+.highlight {
+  color: #e02222;
+}
+
+.tac{
+  text-align: center;
+}
+
+.el-form{
+  h3 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+div .ant-select-dropdown {
+  z-index: 9999;
+}
+
+.el-form.colon{
+.el-form-item__label{
+  &::after{
+    content:':';
+    display: inline-block;
+    margin-left: 3px;
+  }
+}
+}
+
+.el-dropdown-menu__item{
+  >a{
+    color:#606266
+  }
+}
+.el-form-item__content{
+  >span{
+    color:#000;
+  }
+}
+
+.text-primary{
+  color: $primary-color
+}
+.text-success{
+  color: $successColor
+}
+
+
+body .empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  user-select: none;
+  .svg-icon {
+    width: 80px;
+    height: 80px;
+  }
+  p {
+    margin-top: 0;
+    font-size: 15px;
+    color: #999;
+  }
+}
+
+.vxe-table--tooltip-wrapper{
+  z-index: 9999 !important;
+}
+.el-image-viewer__wrapper{
+  z-index: 9999 !important;
+}
+.el-dialog{
+  max-width: 90%;
+}

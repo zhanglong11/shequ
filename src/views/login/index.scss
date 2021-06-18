@@ -1,0 +1,141 @@
+
+.box-card {
+  cursor: pointer;
+  .el-image {
+    width: 100%;
+    height: 200px;
+  }
+}
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+}
+.image-slot {
+  font-size: 30px;
+}
+$bg: #2d3a4b;
+$dark_gray: rgba(0, 0, 0, 0.2);
+$light_gray: #666;
+
+.login-container {
+  height: 100%;
+  width: 100%;
+  background: url('~@/assets/images/login-bg.jpg') center $bg;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login-form {
+    width: 1200px;
+    max-width: 90%;
+    height: 600px;
+    padding: 0 35px;
+    // margin: -240px 0 0 -260px;
+    overflow: hidden;
+    background: url('~@/assets/images/login-form-bg.jpg') center bottom #fff no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-left{
+    border-right: 1px #eee solid;
+    padding-right: 10%;
+    margin-right: 10%;
+  }
+  .login-right{
+    width: 390px;
+  }
+
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .svg-container {
+    color: $dark_gray;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+  }
+
+  .title-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    .title-logo{
+      width: 38px;
+      height: 37px;
+      margin-right: 15px;
+    }
+
+    .title {
+      font-size: 26px;
+      color: $light_gray;
+      text-align: center;
+      font-weight: normal;
+      width: initial;
+      margin: 0;
+    }
+  }
+
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .code {
+    margin-bottom: 24px;
+    ::v-deep > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .codeImg {
+      margin-right: 10px;
+      width: 100px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+}

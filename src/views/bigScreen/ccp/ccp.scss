@@ -1,0 +1,161 @@
+
+@import '~@/styles/mixin.scss';
+@import '~@/styles/variables.scss';
+
+.integral-ranking{
+  width: 100%;
+  height: 34px;
+  padding-right: 5px;
+  border-bottom:1px dashed #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div{
+    color: #414142;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .rowNo{
+    width: 50px;
+  }
+  .ranking-name{
+    width: 70px;
+    @include ellipsis;
+  }
+  .ranking-sex{    
+    width: 50px;
+    text-align: left;
+  }
+  .ranking-phone{
+    flex: 1;
+    @include ellipsis;
+  }
+  .ranking-integral{
+    width: 60px;
+    text-align: right;
+  }
+  .ranking-integral{
+    color: #ff402d;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+.party-study{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .personnel-item{
+    padding-bottom: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    &:before{
+      content: '';
+      width: 15px;
+      height: 15px;
+      border: 3px #e59087 solid;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+}
+.sub-card{
+  ul{
+    display: flex;
+    align-items: center;
+    li{
+      flex: 1;
+      padding: 0 10px;
+      .box{
+        background: #fff;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        padding: 10px 0 10px 10px;
+        .focus-img{
+          border: 2px #fed5d5 solid;
+          border-radius: 50%;
+          width: 44px;
+          height: 44px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+        }
+        .desc{
+          .number{
+            font-size: 20px;
+            color: #e88e00;
+          }
+          .desc-btn{
+            color: #c3645e;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            &:after{
+              content: '';
+              border: 5px transparent solid;
+              border-left-color: #c3645e;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }    
+}
+.tree-card{
+  ul{
+    display: flex;
+    align-items: center;
+    li{
+      flex: 1;
+      padding: 0 2px;
+      .box{
+        display: flex;
+        align-items: center;
+        .focus-img{
+          width: 44px;
+          height: 44px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 4px;
+        }
+        .desc{
+          .number{
+            font-size: 20px;
+            color: #ff3e34;
+          }
+          .desc-btn{
+            color: #666;
+            font-size: 12px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }    
+}
+.party-organ-card,
+.party-study-card{
+  flex: 1.2;
+}
+.ccp-tree{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

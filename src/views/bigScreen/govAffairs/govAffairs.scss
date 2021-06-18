@@ -1,0 +1,37 @@
+
+@import '~@/styles/mixin.scss';
+@import '~@/styles/variables.scss';
+
+.key-personnel,
+.suggestions{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .personnel-item{
+    padding-bottom: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    &:before{
+      content: '';
+      width: 15px;
+      height: 15px;
+      border: 3px #e59087 solid;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+}
+.event-statistics{
+  flex: 2;
+}
+.suggestions-card{
+  flex: 1.5;
+}

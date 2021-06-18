@@ -1,0 +1,541 @@
+// cover some element-ui styles
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block
+  }
+}
+
+// to fix el-date-picker css style
+.el-range-separator {
+  box-sizing: content-box;
+}
+.bg-border{
+  .el-dialog{
+    .el-dialog__header{
+      border-bottom:1px #bbb9b9 solid;
+      background-color: #f7f9fd;
+      padding: 10px 10px 5px 10px;
+      .el-dialog__headerbtn{
+        top:12px;
+      }
+    }
+    .el-dialog__footer{
+      padding: 10px;
+      border-top:1px #bbb9b9 solid;
+      background-color: #f7f9fd;
+    }
+  }
+}
+@mixin isPlan {
+  background: #fff;
+  border-color: $btnPrimaryColor;
+  color: $btnPrimaryColor !important;
+  &:hover,&:focus{
+    background: $btnPrimaryColor;
+    color: #fff !important;
+  }
+}
+.appMain{
+  // 重写按钮样式
+  .el-button{
+    &:active{
+      transform: scale(1.1);
+    }
+    &.el-button--default{
+      &:hover,&:focus{
+        border-color: $btnPrimaryColor;
+        background: none;
+        color: $btnPrimaryColor;
+      }
+    }
+    &.el-button--primary{
+      background: $btnPrimaryColor;
+      border-color: $btnPrimaryColor;
+      color: #fff !important;
+      &:hover,&:focus{
+        background: $btnPrimaryColor;
+        border-color: $btnPrimaryColor;
+      }
+      &.is-plain{
+        @include isPlan;
+      }
+    }
+    &.el-button--plain{
+      @include isPlan;
+    }
+    &.el-button--danger{
+      @include isPlan
+    }
+    &.el-button--text{
+      color: $btnPrimaryColor;
+    }
+    &.is-disabled{
+      opacity: 0.3;
+    }
+  }
+  .el-input:not(.is-disabled),
+  .el-textarea:not(.is-disabled){
+    .el-input__inner,
+    .el-textarea__inner{
+      &:hover, &:focus{
+        border-color: $btnPrimaryColor !important;
+      }
+      &:focus{
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
+    }
+  }
+  .el-select .el-input.is-focus .el-input__inner{
+    border-color: $btnPrimaryColor !important;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .el-select-dropdown__item{
+    &.selected{
+      color: $btnPrimaryColor;
+    }
+  }
+  .el-radio-button__orig-radio:checked + .el-radio-button__inner{
+    border-color: $btnPrimaryColor;
+    background-color: $btnPrimaryColor;
+    box-shadow: none;
+  }
+  .el-radio-button__inner{
+    &:hover{
+      color: $btnPrimaryColor;
+    }
+  }
+  .el-checkbox__input.is-checked + .el-checkbox__label{
+    color: $btnPrimaryColor;
+  }
+  .el-checkbox__input.is-focus .el-checkbox__inner{
+    border-color: #DCDFE6;
+  }
+  .el-input-number{
+    &:hover{
+      .el-input__inner{
+        border-color: $btnPrimaryColor !important;
+      }
+      .el-input-number__decrease,
+      .el-input-number__increase{
+        color: $btnPrimaryColor;
+      }
+    }
+  }
+  .el-date-picker__header-label,
+  .el-picker-panel__icon-btn{
+    &:hover{
+      color: $btnPrimaryColor;
+    }
+  }
+  .el-year-table td,
+  .el-month-table td{
+    .cell{
+      &:hover{
+        color: $btnPrimaryColor;
+      }
+    }
+    &.today{
+      .cell{
+        color: $btnPrimaryColor;
+      }
+    }
+  }
+  .el-date-table td{
+    span{
+      transition: all 0.3s;
+      &:hover{
+        color: $btnPrimaryColor;
+      }
+    }
+    &.today {
+      span{
+        color: $btnPrimaryColor;
+      }
+    }
+    &:hover{
+      span{
+        color: $btnPrimaryColor;
+      }
+    }
+    &.in-range div{
+      background: rgba(0,0,0,0.05);
+      &:hover{
+        background: none;
+      }
+    }
+    &.current:not(.disabled) span,
+    &.start-date span,
+    &.end-date span{
+      background: $btnPrimaryColor;
+      color: #fff;
+    }
+  }
+  .el-time-panel__btn.confirm{
+    color: $btnPrimaryColor;
+  }
+  .el-range-editor{
+    &.is-active{
+      border-color: $btnPrimaryColor;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      &:hover{
+        border-color: $btnPrimaryColor;
+      }
+
+    }
+  }
+  .el-tabs__item{
+    &:hover,
+    &.is-active{
+      color: $btnPrimaryColor;
+    }
+    &.is-active{
+      font-weight: bold;
+    }
+  }
+  .el-tabs__active-bar{
+    background: $btnPrimaryColor;
+  }
+  .el-radio{
+    &.is-checked .el-radio__label{
+      color: $btnPrimaryColor;
+    }
+  }
+  .el-radio__input{
+    &.is-checked{
+      .el-radio__inner{
+        background: $btnPrimaryColor;
+        border-color: $btnPrimaryColor;
+      }
+    }
+    &:hover{
+      .el-radio__inner{
+        border-color: $btnPrimaryColor;
+      }
+    }
+  }
+  // 日历
+  .el-calendar{
+    th{
+      text-align: center;
+    }
+    td{
+      border: 0 !important;
+      transition: all 0.3s;
+      &.is-today{
+        color: $btnPrimaryColor;
+      }
+      &.is-selected{
+        background: rgba(221, 51, 34, 0.1);
+      }
+    }
+    .el-calendar-day{
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      padding: 0;
+      &:hover{
+        background: rgba(221, 51, 34, 0.05);
+      }
+      &:hover{
+        .schedule-list .log{
+          display: block;
+        }
+      }
+    }
+    .schedule-list{
+      position: relative;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      &.has-day{
+        border: 2px $btnPrimaryColor solid;
+        border-radius: 50%;
+      }
+      .log{
+        position: absolute;
+        display: none;
+        width: 280px;
+        background: rgba(0,0,0,0.8);
+        color: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        left: -220px;
+        top: 35px;
+        z-index: 5;
+        &:before{
+          content: '';
+          position: absolute;
+          top: -10px;
+          left: 228px;
+          border: 5px transparent solid;
+          border-bottom-color: rgba(0,0,0,0.8);
+        }
+        p{
+          margin: 0 0 10px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          &:last-child{
+            margin: 0;
+          }
+          .el-tag{
+            margin-right: 10px;
+          }
+          .title{
+            flex: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+  // 表格样式
+  table{
+    .el-button--small{
+      padding: 0;
+    }
+    .el-button:not(.is-disabled){
+      border: 0;
+      background: none !important;
+      color: $tablebtnPrimaryColor !important;
+      &.el-button--primary{
+        color: $tablebtnPrimaryColor !important;
+      }
+      &.el-button--danger{
+        color: $tablebtnDangerColor !important;
+      }
+    }
+    a{
+      color: $btnPrimaryColor;
+    }
+  }
+  // 分页样式
+  .page-wrap{
+    .el-pager li.active{
+      background: $btnPrimaryColor;
+      border: 1px $btnPrimaryColor solid;
+      color: #fff;
+    }
+    .total{
+      color: $btnPrimaryColor;
+      font-weight: normal;
+    }
+  }
+  .vxe-table--render-default .is--disabled.vxe-cell--checkbox{
+    padding-left: 0;
+    .vxe-checkbox--icon{
+      display: none;
+    }
+  }
+  // 树组件
+  .el-tree{
+    // 隐藏禁用的选择框
+    .el-checkbox.is-disabled{
+      display: none;
+    }
+  }
+  .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content{
+    background: $btnPrimaryColor !important;
+    color: #fff;
+    .el-dropdown-selfdefine{
+      color: #fff;
+    }
+  }
+  .el-checkbox__input{
+    &.is-checked,
+    &.is-indeterminate{
+      .el-checkbox__inner{
+        background: $btnPrimaryColor;
+        border-color: $btnPrimaryColor;
+      }
+    }
+    &:hover{
+      .el-checkbox__inner{
+        border-color: $btnPrimaryColor;
+      }
+    }
+  }
+  .el-scrollbar__wrap{
+    //overflow-y: hidden;
+    overflow-x: auto;
+  }  
+  .el-tag{
+    background: #fff;
+    border-color: $btnPrimaryColor;
+    color: $btnPrimaryColor;
+  }
+  .el-switch.is-checked .el-switch__core{
+    background: $btnPrimaryColor;
+    border-color: $btnPrimaryColor;
+  }
+  .h-transfer .transfer__header{
+    background: $btnPrimaryColor;
+  }
+  .el-tabs--border-card > .el-tabs__header .el-tabs__item{
+    &.is-active,
+    &:hover{
+      color: $btnPrimaryColor !important;
+    }
+  }
+
+  // ant树样式
+  .ant-tree{
+    .anticon svg{
+      fill: $btnPrimaryColor;
+    }
+    li .ant-tree-node-content-wrapper{
+      transition: all 0.3s;
+      &.ant-tree-node-selected, &:hover{
+        color: $btnPrimaryColor;
+        background: none;
+      }
+    }
+  }
+  .ant-select-selection{
+    &:hover, &:focus{
+      border-color: $btnPrimaryColor;
+    }
+  }
+  .ant-select-open {
+    .ant-select-selection{
+      border-color: $btnPrimaryColor;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  }
+
+  // 表格样式
+  .vxe-table{
+    thead{
+      th{
+        background: #fbf0f0;
+        height: 56px;
+        font-weight: normal;
+        color: #000;
+      }
+    }
+    tbody{
+      tr{
+        transition: all 0.3s;
+        td{
+          color: #666;
+        }
+        &.row--stripe{
+          background: #fdfbfb;
+        }
+        &:hover{
+          background: #f5f2f2 !important;
+        }
+      }
+    }
+  }
+  // 重写工作流样式
+  .work-flow{
+    height: 100% !important;    
+    .fm2-container footer{
+      display: none !important;
+    }
+    .flow-path-card{
+      &.start-node{        
+        box-shadow: 0 0 0 1px $btnPrimaryColor, 0 0 6px 4px rgb(0 0 0 / 10%);
+      }
+      &.start-node .header{
+        background-color: $btnPrimaryColor;
+      }
+      &:hover{
+        &.start-node{
+          box-shadow: 0 0 0 3px $btnPrimaryColor, 0 0 6px 4px rgb(0 0 0 / 10%);
+        }
+      }
+    }
+    .end-node{
+      border-color: $btnPrimaryColor;
+      background: rgba(255,236,236,0.3);
+    }
+    .add-node-btn-box .add-node-btn .btn,
+    .node-wrap-box.start .add-node-btn-box:before{
+      background-color: $btnPrimaryColor;
+    }
+    .node-wrap-box.start .add-node-btn-box:after{
+      border-color: $btnPrimaryColor transparent transparent;
+    }
+  }
+  .approver-main .main-header .step-tab>.step.ghost-step{
+    background: $btnPrimaryColor;
+  }
+  .components-list .form-edit-widget-label{
+    &:hover{
+      border-color: $btnPrimaryColor;
+      a{
+        background: $btnPrimaryColor;
+      }
+    }
+  }
+  .widget-config-container .config-tab.active{
+    border-color: $btnPrimaryColor;
+  }
+  .widget-form-container .widget-form-list .widget-view{
+    background: rgba(255,236,236,0.2);
+    .widget-view-drag,
+    .widget-view-action{
+      background: $btnPrimaryColor;
+    }
+    &.active{
+      border-color: $btnPrimaryColor;
+      outline-color: $btnPrimaryColor;
+    }
+    &:hover{
+      background: rgba(255,236,236,0.4);
+      border-color: $btnPrimaryColor;
+      outline-color: $btnPrimaryColor;
+    }
+  }
+}
+.vxe-table--render-default.size--small .vxe-body--column.col--ellipsis>.vxe-cell, .vxe-table--render-default.size--small .vxe-footer--column.col--ellipsis>.vxe-cell, .vxe-table--render-default.size--small .vxe-header--column.col--ellipsis>.vxe-cell{
+  max-height: 400px !important;
+}

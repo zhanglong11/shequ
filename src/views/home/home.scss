@@ -1,0 +1,169 @@
+@import '~@/styles/variables.scss';
+.home {
+  margin: 0;
+  background: none;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  .el-card {
+    overflow: inherit;
+  }
+  .home-item-info {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .card-info {
+    flex: 1;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    .user-avatar {
+      margin-right: 30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .user-name {
+      flex: 1;
+      .title {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      .desc {
+        margin-bottom: 0;
+        color: #999;
+      }
+    }
+    .user-total {
+      display: flex;
+      text-align: center;
+      width: 480px;
+      p {
+        margin-bottom: 0;
+        text-align: center;
+        flex: 1;
+        font-size: 16px;
+        position: relative;
+        &:before {
+          content: '';
+          width: 1px;
+          height: 60%;
+          background: #f0f0f0;
+          position: absolute;
+          top: 20%;
+          left: 0;
+        }
+        b {
+          display: block;
+          font-size: 30px;
+        }
+        span {
+          color: #999;
+        }
+        &.todo {
+          color: $primary-color;
+          span {
+            color: $primary-color;
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .home-chart-con {
+    display: flex;
+    height: calc(10vh);
+    margin-top: 15px;
+    flex: 1;
+    .left {
+      flex: 1;
+      display: flex;
+      margin: 0 -7.5px;
+      
+      ::v-deep .el-card__body{
+        padding: 0;
+      }
+    }
+    .right {
+      margin-left: 15px;
+      width: 30%;
+      display: flex;
+    }
+    .card-left {
+      flex: 1;
+      margin: 0 7.5px;
+    }
+    .card-right {
+      flex: 1;
+    }
+  }
+  .home-item-con {
+    display: flex;
+    height: calc(50vh);
+    min-height: 430px;
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .right {
+      margin-left: 15px;
+      width: 30%;
+      display: flex;
+    }
+    .card-left {
+      flex: 1;
+    }
+  }
+  .card-header-title {
+    display: flex;
+    align-items: center;
+    .card-icon {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+    .title {
+      font-size: 16px;
+    }
+    .title-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .item {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.card-fase-menu{
+  flex: 1;
+  ::v-deep.el-card__body{
+    overflow: hidden;
+  }
+}
+::v-deep .el-card {
+  display: flex;
+  flex-direction: column;
+  .el-card__body {
+    flex: 1;    
+  }
+  &.card-left{
+    .el-card__body{
+      overflow: hidden;
+    }
+  }
+  &.schedule-card{
+    .el-card__body{
+      padding: 0;
+    }
+    .el-calendar__body{
+      padding: 12px 15px 0;
+    }
+  }
+}

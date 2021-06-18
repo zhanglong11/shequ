@@ -1,0 +1,159 @@
+$iconSize:16px;
+$largeIconSize:19px;
+
+.base-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  line-height: 32px;
+
+  .info-label {
+    color: #999;
+    padding-right: 10px;
+  }
+
+}
+
+.icon {
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+
+}
+
+.icon-module {
+  width: 14px;
+  height: 14px;
+  background-image: url('~@/assets/images/icon-module.png');
+  margin-right: 8px;
+}
+
+.icon-module-bg {
+  width: 17px;
+  height: 17px;
+  background-image: url('~@/assets/images/icon-module-bg.png');
+  margin-right: 10px;
+
+}
+
+.box-card {
+  ::v-deep .el-card__header {
+    padding: 10px;
+  }
+  &+.box-card{
+    margin-top: 20px;
+  }
+
+}
+
+.box-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  i {
+    font-size: $largeIconSize;
+    margin-left: 10px;
+    color: #8e979f;
+    cursor: pointer;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.empty-tip {
+  min-height: 60px;
+  text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #999;
+}
+
+.el-table {
+
+// 展开子项。关闭子项样式调整
+  ::v-deep .el-table__expand-icon {
+    font-size: $iconSize;
+    color: #8e979f;
+
+    ::v-deep .el-icon-arrow-right::before {
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      content: '\F196' !important;
+
+    }
+
+    &.el-table__expand-icon--expanded {
+      transform: none;
+
+      ::v-deep .el-icon-arrow-right::before {
+        content: "\F147" !important;
+
+      }
+    }
+
+
+  }
+
+  .menuText-wrapper {
+    display: inline-block;
+
+    .fa {
+      display: inline-block;
+      color: #666;
+      margin: 0 5px;
+      width: $iconSize;
+      height: $iconSize;
+      font-size: $iconSize;
+      vertical-align: middle;
+    }
+  }
+
+
+
+  .el-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+   margin: 0 5px 5px 5px;
+    i {
+      font-size: $iconSize;
+      ;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    ::v-deep .el-tag__close {
+      display: none;
+    }
+  }
+}
+

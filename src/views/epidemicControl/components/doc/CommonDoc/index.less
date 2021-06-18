@@ -1,0 +1,270 @@
+.doc-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 0;
+  .doc-level {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    .doc-jump {
+      .blue-doc {
+        color: #4b9cff;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .blue-gt {
+        color: #4b9cff;
+      }
+    }
+    .top-file-opt {
+      margin-left: 10px;
+      font-size: 12px;
+    }
+  }
+  .filter-opt {
+    .filter-form {
+      display: flex;
+      align-items: baseline;
+      .high-search {
+        font-size: 12px;
+        color: #4b9cff;
+        position: relative;
+        width: 100px;
+        .high-search-content {
+          padding: 20px 20px;
+          position: absolute;
+          width: 400px;
+          height: 200px;
+          left: -300px;
+          top: 35px;
+          border: 1px red solid;
+          border-radius: 5px;
+          background-color: #fff;
+          z-index: 99;
+          /deep/ .el-form-item {
+            margin-bottom: 15px;
+          }
+          .high-search-content-item {
+            width: 250px;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .doc-search {
+      /deep/ .el-input-group__append {
+        border-radius: 0 5px 5px 0;
+        color: #fff;
+        .el-button {
+          margin-bottom: -10px;
+        }
+      }
+    }
+    /deep/ .el-form-item {
+      margin-bottom: 0;
+      .el-button {
+      }
+    }
+  }
+}
+/deep/ .vxe-cell--checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+
+  .vxe-checkbox--icon {
+    top: -7px;
+  }
+}
+.row-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .file-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+/deep/ .vxe-cell--title {
+  .vxe-checkbox--icon {
+    top: -5px;
+  }
+}
+.checkbox-header {
+  display: flex;
+  align-items: center;
+}
+
+.tab-icon{
+  font-size: 22px;
+  color:#e54555;
+  background-color: #fff;
+  padding: 0 7px;
+  border: 1px #ec4b5b solid;
+  svg{
+    fill:#e54555;
+  }
+  &.active{
+    background-color: #e54555;
+    color: #fff;
+    svg{
+      fill:#fff;
+    }
+  }
+  &:last-child{
+    border-left:none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+/deep/ .el-card{
+  .el-card__header{
+    padding: 5px 10px;
+  }
+}
+.file-card-title{
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.file-card-list{
+  /deep/ .el-checkbox-group{
+    display: flex;
+    flex-wrap: wrap;
+    .card-item{
+      flex:0 0 170px;
+      height: 110px;
+      margin: 10px;
+      border:1px #e4e4e4 solid;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      .item-hover-item{
+        position: absolute;
+        width: 80px;
+        text-align: center;
+        right:-60px;
+        border:1px #e4e4e4 solid;
+        border-radius: 4px;
+        background-color: #fff;
+        z-index: 2;
+        top:25px;
+        font-size: 12px;
+        li{
+          border-bottom:1px #e4e4e4 solid ;
+          line-height: 1.5;
+          &:last-child{
+            border-bottom: none;
+          }
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+      .item-top{
+        flex:1 0 auto;
+        position: relative;
+        display: flex;
+        .card-check{
+          position: absolute;
+          display: none;
+          width: 20px;
+          height: 20px;
+          top:5px;
+          left:5px;
+        }
+        .card-image{
+          flex:1;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .img{
+            height: 40px;
+            width: 40px;
+          }
+        }
+        .card-more{
+          position: absolute;
+          display: none;
+          width: 30px;
+          height: 30px;
+          top:5px;
+          right: 5px;
+          font-size: 14px;
+          color:#908f8f;
+          text-align:right ;
+          font-weight: normal;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+      .item-file-name{
+        flex: 0 0 20px;
+        width: 140px;
+        font-size: 14px;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 auto;
+      }
+      &:first-child{
+
+      }
+      .el-checkbox__label{
+        display: none;
+      }
+      &:hover{
+        .card-check,.card-more{
+          display: block!important;
+        }
+      }
+    }
+  }
+}
+.file-icon{
+  background-color: #3dbbee;
+  background-size: 100% 100%!important;
+  &.png{
+    background: url('~@/assets/file-img/png.png');
+  }
+  &.doc{
+    background: url('~@/assets/file-img/doc.png');
+  }
+  &.xls{
+    background: url('~@/assets/file-img/xls.png');
+  }
+  &.txt{
+    background: url('~@/assets/file-img/txt.png');
+  }
+  &.pdf{
+    background: url('~@/assets/file-img/pdf.png');
+  }
+  &.jpg{
+    background: url('~@/assets/file-img/jpg.png');
+  }
+  &.gif{
+    background: url('~@/assets/file-img/gif.png');
+  }
+  &.other{
+    background: url('~@/assets/file-img/other.png');
+  }
+  &.isFolder {
+    background:  url('~@/assets/file-img/folder.png') ;
+  }
+}
+

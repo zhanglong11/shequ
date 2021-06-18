@@ -1,0 +1,33 @@
+
+@import '~@/styles/mixin.scss';
+@import '~@/styles/variables.scss';
+
+.epidemic-wrap {
+  height: calc(100vh);
+  background: #fffaf9;
+
+  .inoculate-info-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .iiw-pie {
+      flex: 0 0 30%;
+    }
+    .iiw-table {
+      margin-top: 10px;
+      overflow-y: auto;
+
+      ::v-deep .vxe-table thead th {
+        height: 40px;
+      }
+    }
+  }
+
+  .map-center {
+    position: absolute;
+    width: calc(100vw - 800px);
+    top: 99px;
+    left: 400px;
+    bottom: 20px;
+  }
+}

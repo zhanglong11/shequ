@@ -1,0 +1,559 @@
+@import '~@/styles/variables.scss';
+@import '~@/styles/mixin.scss';
+.big-screen {
+  width: 100%;
+  height: 100%;
+  // background: url('./images/map-bg.jpg') center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.screen-header {
+  display: flex;
+  height: 79px;
+  position: relative;
+  z-index: 2;
+  .logo {
+    width: 420px;
+    height: 100%;
+    cursor: pointer;
+  }
+  .menu {
+    flex: 1;
+    background: url('./images/menu-bg.png') top repeat-x;
+    height: 100%;
+    ul {
+      display: flex;
+      align-items: center;
+      height: 55px;
+      li {
+        height: 100%;
+        margin: 0 15px;
+        a {
+          color: #fff;
+          font-size: 16px;
+          width: 100px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          &:before {
+            content: '';
+            background: none;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            transition: all 0.3s;
+          }
+          &:hover,
+          &.router-link-active {
+            color: #fff0a7;
+          }
+          &.router-link-active {
+            text-shadow: 0 0 5px #ffe898;
+            &:before {
+              background: #ffdf71;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-right-con{
+    background: url('./images/menu-bg.png') top repeat-x;
+    height: 100%;
+  }
+  .nav-right{
+    background: url('./images/menu-bg.png') top repeat-x;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  .header-right {
+    background: url('./images/menu-right.png') top no-repeat;
+    width: 58px;
+    height: 100%;
+  }
+  .line{
+    width: 1px;
+    height: 25px;
+    background: rgba(255,255,255,0.2);
+    margin: 0 15px;
+  }
+  .weather{
+    display: flex;
+    align-items: center;
+  }
+  .user-info{    
+    display: flex;
+    align-items: center;
+    .user-name{
+      margin-left: 10px;
+    }
+  }
+}
+.screen-body{
+  z-index: 2;
+}
+.map3d{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  ::v-deep .web-gis{
+    height: 100%;
+    .compass{
+      right: initial;
+      left: 400px;
+      top: 60px;
+    }
+    .navigation-controls{
+      right: initial;
+      left: 432px;
+      top: 150px;
+    }
+  }
+}
+.base-header{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  span{
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+}
+.dialog-info{
+  display: flex;
+  flex-direction: column;
+  max-height: calc(60vh);
+  overflow-y: auto;
+  .totalCount{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .el-form{
+    .el-form-item{
+      width: 50%;
+      display: inline-block;
+      color: #333;
+      margin-bottom: 8px;
+      ::v-deep .el-form-item__label{
+        color: #878787;
+      }
+    }
+  }
+  &.personnel-details{
+    flex-direction: row;
+    .focus-img{
+      width: 160px;
+      height: 160px;
+      display: flex;
+      .el-image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .el-form{
+      flex: 1;
+    }
+  }
+}
+// 地图工具条样式
+$mapItemWidth: 260px;
+$mapItemHeight: 310px;
+.bim-con{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  ::v-deep #cubeBox{
+    display: none;
+  }
+  ::v-deep .tree-wrap.show{
+    left: 400px !important;
+    top: 200px;
+    height: calc(100vh - 500px);
+    .container .content{
+      width: 100%;
+    }
+  }
+  ::v-deep .setting-wrap.show{
+    right: 400px;
+    bottom: 355px;
+  }
+}
+::v-deep .bimfishModeloApp{
+  .bim-tools{
+    bottom: 300px;
+  }
+}
+.map-tools{
+  .tools-item{
+    position: absolute;
+    z-index: 9;
+    top: 99px;
+    left: 400px;
+    display: flex; 
+    .tools-btn{
+      background: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      &.active{
+        background: $btnPrimaryColor;
+      }
+    }  
+    &.car-item{
+      margin-top: 45px;
+    }
+    &.setting-item{
+      left: initial;
+      right: 400px;
+      .tools-body .tools-list .box{
+        flex-direction: column;
+        ::v-deep .el-checkbox-group{
+          width: 100%;
+          .el-checkbox{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .tools-body{
+      position: relative;
+      width: 0;
+      overflow: hidden;
+      .tools-search{
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 0.4s;
+        ::v-deep .el-input-group__append{
+          background: #fff;
+          text-align: center;
+          width: 30px;
+          .el-button{
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .tools-list{
+        background: rgba(255,255,255,0.9);
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin: 0 6px;
+        position: relative;
+        z-index: 2;
+        width: $mapItemWidth;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.4s;
+        ul{
+          li{
+            padding: 0 20px;
+            .box{
+              padding: 10px 0;
+              display: flex;
+              align-items: center;
+              border-bottom: 1px #ddd dashed;  
+              .box-desc{
+                font-size: 13px;
+                overflow: hidden;
+                p {
+                  margin: 5px 0;
+                  display: flex;
+                  align-items: center;
+                  img{
+                    margin: 0 5px;
+                  }
+                  .label{
+                    color: #999;
+                  }
+                }
+                .name-con{
+                  cursor: pointer;
+                }
+                .name{
+                  flex: 1;
+                  color: $btnPrimaryColor;
+                  cursor: pointer;
+                  @include ellipsis;
+                  &:active{
+                    opacity: 0.8;
+                  }
+                }
+              }
+              .box-title{
+                font-size: 20px;
+                font-weight: bold;
+                width: 100%;
+                margin-bottom: 15px;
+              }
+            }
+            .box-tree{
+              .tree-item{
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: bold;
+                overflow: hidden;
+                .name{
+                  flex: 1;
+                  @include ellipsis;
+                }
+                .btn-plus{
+                  border: 1px $btnPrimaryColor solid;
+                  border-radius: 3px;
+                  width: 15px;
+                  height: 15px;
+                  position: relative;
+                  margin-right: 10px;
+                  cursor: pointer;
+                  &:before, &:after{
+                    content: '';
+                    width: 8px;
+                    height: 1px;
+                    background: $btnPrimaryColor;
+                    position: absolute;         
+                    left: 50%;
+                    top: 50%;
+                    margin-left: -4px;
+                    margin-top: -1px;        
+                  } 
+                  &:after{
+                    transform: rotate(90deg);
+                  }  
+                  &.active{
+                    &:after{
+                      display: none;
+                    }
+                  }
+                }
+              }
+              .tree-item-sub{
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                overflow: hidden;
+                transition: all 0.3s;
+                padding-left: 25px;
+                color: #666;
+                margin-bottom: 10px;
+                .tree-sub-title{
+                  display: flex;
+                  align-items: center;
+                  cursor: pointer;
+                  height: 30px;
+                  margin: 0;
+                  &:hover{
+                    color: $btnPrimaryColor;
+                  }
+                  img{
+                    margin-left: 10px;
+                  }
+                }
+                &.active{
+                  opacity: 1;
+                  visibility: visible;
+                  height: auto;
+                }
+              }
+            }
+            &:last-child{
+              .box{
+                border: 0;
+              }
+            }
+          }
+        }
+        &.open{
+          height: $mapItemHeight;
+          overflow-y: auto;
+          border: 1px rgba(0,0,0,0.1) solid;
+          &.noData{
+            height: auto;
+          }
+        }
+      }
+      &.open{
+        width: auto;
+        .tools-search{
+          width: $mapItemWidth;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .tools-bimtype{
+    position: absolute;
+    z-index: 9;
+    bottom: 300px;
+    right: 400px;
+    background: #fff;    
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    font-weight: bold;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    span{
+      height: 35px;
+      border-radius: 4px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      &.active{
+        background: $bigScreenBimColor;
+        color: #fff;
+      }
+    }
+  }
+}
+.room-details{
+  .tabs{
+    ::v-deep .el-tabs__header{
+      margin-bottom: 10px;
+      .el-tabs__nav-wrap{
+        .el-tabs__active-bar,
+        &:after{
+          display: none;
+        }
+        .el-tabs__item{
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffdad9;
+          color: $bigScreenTabColor;
+          font-weight: bold;
+          padding: 4px 10px;
+          width: 160px;
+          height: 36px;
+          margin: 0 5px 5px 0;
+          transition: all 0.3s;
+          &.is-active{
+            background: $bigScreenTabColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  $tabColor1: #ff6961;
+  $tabColor2: #ff9d3c;
+  $tabColor3: #fdd56a;
+  $tabColor4: #ccc;
+  .room-table{
+    table{
+      width: 100%;
+      tr{
+        td{
+          text-align: center;
+          padding: 1px;
+          font-size: 14px;
+          span{
+            background: #eae8e5;
+            color: $bigScreenTabColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            cursor: no-drop;
+            &.status1{
+              background: $tabColor3;
+              color: #fff;
+              cursor: pointer;
+            }
+            &.status2{
+              background: $tabColor2;
+              color: #fff;
+              cursor: pointer;
+            }
+            &.status3{
+              background: $tabColor1;
+              color: #fff;
+              cursor: pointer;
+            }
+            &.status4{
+              background: $tabColor4;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .labels{
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    .label{
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+      &:before{
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: $tabColor1;
+        border-radius: 4px;
+        margin-right: 6px;
+      }
+      &.label2:before{
+        background: $tabColor2;
+      }
+      &.label3:before{
+        background: $tabColor3;
+      }
+      &.label4:before{
+        background: $tabColor4;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .screen-header .menu{
+    ul{
+      li{
+        margin: 0 10px;
+        a{
+          width: 80px;
+        }
+      }
+    }
+  }
+}

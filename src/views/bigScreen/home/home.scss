@@ -1,0 +1,75 @@
+
+@import '~@/styles/mixin.scss';
+@import '~@/styles/variables.scss';
+.info-total{
+  margin: 0 -15px;
+  ul{
+    @include clearfix;
+    li{
+      width: 33.3333%;
+      float: left;
+      padding: 5px;
+      margin-bottom: 10px;
+      .box{
+        background: rgba(255,255,255,0.9);
+        border-radius: 6px;
+        padding: 5px;
+        .box-header{
+          font-size: 14px;
+          font-weight: bold;
+          border-bottom: 1px #fecbc8 solid;
+          padding-bottom: 3px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 5px;
+          }
+          &:after{
+            content: '';
+            width: 4px;
+            height: 1px;
+            background: $bigScreenColor;
+            position: absolute;
+            bottom: 8px;
+            right: 0;
+          }          
+        }
+        .box-body{
+          color: $bigScreenColor;
+          font-size: 24px;
+          font-weight: bold;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.housing-info{
+  height: 100%;
+  display: flex;
+  position: relative;
+  &:before{
+    content: '';
+    width: 1px;
+    height: 81%;
+    background: #ccc;
+    position: absolute;
+    top: 10%;
+    left: 50%
+  }
+  .title{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .housing-state,
+  .housing-type{
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0 5px;
+  }
+}
